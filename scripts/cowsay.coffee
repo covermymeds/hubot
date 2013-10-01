@@ -24,7 +24,7 @@ module.exports = (robot) ->
 
 
   speech_bubble = (message)->
-  robot.respond /the(?:(\s\w*\s)|\s)cow says, "(.*)"/i, (msg)->
+  robot.hear /the(?:(\s\w*\s)|\s)cow says, "(.*)"/i, (msg)->
     cow_type = cleanup_cow_type msg.match[1]
     bubble   = Bubble           msg.match[2]
     msg.send bubble + Cows[cow_type]
