@@ -2,15 +2,17 @@
 #   What does a cow say?
 #
 # Dependencies:
+#   none
 #
 # Configuration:
+#   none
 #
 # Commands:
-#   hubot the cow says <phrase>
-#   hubot confused cow says <phrase>
-#   hubot surprised cow says <phrase>
-#   hubot dizzy cow says <phrase>
-#   hubot raspberry cow says <phrase>
+#   the cow says, "<phrase>"
+#   the confused cow says, "<phrase>"
+#   the surprised cow says, "<phrase>"
+#   the dizzy cow says, "<phrase>"
+#   the raspberry cow says, "<phrase>"
 #
 # Notes:
 #   Just nerding around
