@@ -5,9 +5,14 @@
 #   hubot checklist me stage - checklist for staging
 
 module.exports = (robot) ->
+  capture_name = (name)->
+    (name + "").trim()
+
+
   #robot.respond /(image|img)( me)? (.*)/i, (msg) ->
   robot.respond /(checklist)( me)? (stage|staging)/i, (msg) ->
-    msg.send Checklists[staging]
+    checklist_type = capture_name msg.match[3]
+    msg.send Checklists[checklist_type]
 
 
   robot.respond /(test)( me)? (.*)/i, (msg) ->
