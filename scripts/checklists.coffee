@@ -29,6 +29,7 @@ Checklists =
       Checklist for staging:
       [ ] 'git checkout master; git pull'
           > to ensure you're rebasing against most recent
+      [ ] 'git checkout <your branch>'
       [ ] 'git rebase master'
       [ ] resolve conflicts
       [ ] git push -f
