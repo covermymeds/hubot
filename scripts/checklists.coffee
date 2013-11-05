@@ -11,7 +11,8 @@ module.exports = (robot) ->
 
   #robot.respond /(image|img)( me)? (.*)/i, (msg) ->
   robot.respond /(checklist)( me)? (stage|staging)/i, (msg) ->
-    checklist_type = capture_name msg.match[3]
+    #checklist_type = capture_name msg.match[3]
+    checklist_type = "staging"
     msg.send Checklists[checklist_type]
 
 
