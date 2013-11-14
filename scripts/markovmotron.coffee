@@ -19,7 +19,7 @@ module.exports = (robot) ->
 
   markovmotronIsAlive = false
   probability         = [false, false, false, false, true]
-  maxWords            = [5, 10, 15, 20, 25, 30, 35, 40]
+  maxWords            = [5, 7, 9, 11, 13, 15, 17, 19, 25]
   prefixLen           = 4
   exec                = require('child_process').exec
   path                = "scripts/markovmotron"
@@ -32,7 +32,7 @@ module.exports = (robot) ->
     maxResponse = msg.random(maxWords)
     options     = "--words=#{maxResponse} --corpus=#{path}/corpus.txt --prefix=#{prefixLen}"
 
-    exec "echo \"#{msg.match[0]}\" | #{path}/markovmotron #{options}", (err, stdout, stderr)->
+    exec "echo \"#{msg.match[0]}\" | bin/markovmotron #{options}", (err, stdout, stderr)->
       return console.log('exec error: ' + err) if err
       msg.reply(stdout)
 
