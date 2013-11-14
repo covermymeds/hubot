@@ -36,7 +36,8 @@ module.exports = (robot) ->
     exec command, (err, stdout, stderr)->
       return console.log('exec error: ' + err, command) if err
       setTimeout () ->  # delay for realism
-        msg.send(stdout)
+        campFriendly = stdout.replace(/(\r\n|\n|\r)$/m,"")
+        msg.send(campFriendly)
       , 4 * 1000
 
   robot.respond /join the fun(\s\d)?$/i, (msg)->
