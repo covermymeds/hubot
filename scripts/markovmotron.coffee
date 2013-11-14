@@ -31,16 +31,19 @@ module.exports = (robot) ->
 
     maxResponse = msg.random(maxWords)
     options     = "--words=#{maxResponse} --corpus=#{path}/corpus.txt --prefix=#{prefixLen}"
+    command     = "echo \"#{msg.match[0]}\" | bin/markovmotron #{options}"
 
-    exec "echo \"#{msg.match[0]}\" | bin/markovmotron #{options}", (err, stdout, stderr)->
-      return console.log('exec error: ' + err) if err
-      msg.reply(stdout)
+    exec command, (err, stdout, stderr)->
+      return console.log('exec error: ' + err, command) if err
+      setTimeout () ->  # delay for realism
+        msg.send(stdout)
+      , 4 * 1000
 
   robot.respond /join the fun(\s\d)?$/i, (msg)->
     markovmotronIsAlive = true
     prefixLen           = +msg.match[1] if msg.match[1]
-    msg.reply ":godmode:"
+    msg.send ":godmode:"
 
   robot.respond /go home, you're drunk/i, (msg)->
     markovmotronIsAlive = false
-    msg.reply ":skull:"
+    msg.send ":skull:"
