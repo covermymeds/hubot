@@ -15,6 +15,10 @@ module.exports = (robot) ->
     checklist_type = "staging"
     msg.send Checklists[checklist_type]
 
+  robot.respond /(checklist)( me)? (regression)/i, (msg) ->
+    checklist_type = "regression"
+    msg.send Checklists[checklist_type]
+
 
   robot.respond /(test)( me)? (.*)/i, (msg) ->
     msg.send msg.match[3]
@@ -23,7 +27,7 @@ module.exports = (robot) ->
 
 
 
-Checklists =       
+Checklists =
   staging:
    """
       Checklist for staging:
@@ -33,5 +37,18 @@ Checklists =
       [ ] 'git rebase master'
       [ ] resolve conflicts
       [ ] git push -f
-    """      
+    """
+  regression:
+    """
+      Checklist for regression:
+      [ ] 'bundle exec rake spec'
+          > runs specs
+      [ ] 'bundle exec rake recordfails'
+          > runs features
+      [ ] 'bundle exec rake rerun'
+          > if there are failures
+
+      [ ] 'bundle exec rake prod'
+          > for post deployment
+    """
 
