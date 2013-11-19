@@ -30,14 +30,8 @@ module.exports = (robot) ->
 Checklists =
   staging:
    """
-      Checklist for staging:
-      [ ] 'git checkout master; git pull'
-          > to ensure you're rebasing against most recent
-      [ ] 'git checkout <your branch>'
-      [ ] 'git rebase master'
-      [ ] resolve conflicts
-      [ ] git push -f
-    """
+      Checklist for staging: https://git.innova-partners.com/cmm/CMM_PHP#change-management
+   """
   regression:
     """
       Checklist for regression:
