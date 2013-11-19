@@ -30,7 +30,7 @@ module.exports = (robot) ->
 Checklists =
   staging:
    """
-      Checklist for staging: https://git.innova-partners.com/cmm/CMM_PHP#change-management
+      Checklist for staging CMM_PHP: https://git.innova-partners.com/cmm/CMM_PHP#change-management
    """
   regression:
     """
