@@ -8,6 +8,10 @@ module.exports = (robot) ->
   capture_name = (name)->
     (name + "").trim()
 
+  robot.respond /(checklist)( me)? (pull request|pull)/i, (msg) ->
+    checklist_type = "pull_request"
+    msg.send Checklists[checklist_type]
+
 
   #robot.respond /(image|img)( me)? (.*)/i, (msg) ->
   robot.respond /(checklist)( me)? (stage|staging)/i, (msg) ->
@@ -36,6 +40,8 @@ Checklists =
    """
       Checklist for staging CMM_PHP: see the README
       https://git.innova-partners.com/cmm/CMM_PHP#change-management
+
+      > next: regression
    """
   regression:
     """
@@ -53,6 +59,8 @@ Checklists =
       [ ] errbit.covermymeds.com
           > monitor for new errors
           > also post deployment
+
+      > next: deployment
     """
   deploy:
    """
@@ -66,6 +74,15 @@ Checklists =
 
       [ ] errbit.covermymeds.com
           > monitor for new errors
+
+      [ ] close issues
+   """
+  pull_request:
+   """
+      Steps for a pull request: 
+      https://git.innova-partners.com/cmm/CMM_PHP#change-management
+
+      > next: staging
    """
   checklists:
    """
@@ -73,5 +90,6 @@ Checklists =
       devmotron checklist me staging
       devmotron checklist me regression
       devmotron checklist me deploy
+      devmotron checklist me pull request
    """
 
