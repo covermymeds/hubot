@@ -2,7 +2,7 @@
 #   displays various checklists
 #
 # Commands:
-#   hubot checklist me stage - checklist for staging
+#   hubot checklist me checklists - displays available checklist commands
 
 module.exports = (robot) ->
   capture_name = (name)->
@@ -19,6 +19,10 @@ module.exports = (robot) ->
     checklist_type = "regression"
     msg.send Checklists[checklist_type]
 
+  robot.respond /(checklist)( me)? (deploy|deployment)/i, (msg) ->
+    checklist_type = "deploy"
+    msg.send Checklists[checklist_type]
+
 
   robot.respond /(test)( me)? (.*)/i, (msg) ->
     msg.send msg.match[3]
@@ -30,7 +34,8 @@ module.exports = (robot) ->
 Checklists =
   staging:
    """
-      Checklist for staging CMM_PHP: https://git.innova-partners.com/cmm/CMM_PHP#change-management
+      Checklist for staging CMM_PHP: see the README
+      https://git.innova-partners.com/cmm/CMM_PHP#change-management
    """
   regression:
     """
@@ -44,5 +49,29 @@ Checklists =
 
       [ ] 'bundle exec rake prod'
           > for post deployment
+
+      [ ] errbit.covermymeds.com
+          > monitor for new errors
+          > also post deployment
     """
+  deploy:
+   """
+      Checklist for deploying: see a developer
+
+      Checklist for testing a deploy:
+      [ ] 'bundle exec rake prod'
+          > run at least 3 times for intermittent errors
+
+      [ ] relevant manual testing (depends on what changed)
+
+      [ ] errbit.covermymeds.com
+          > monitor for new errors
+   """
+  checklists:
+   """
+      available checklists:
+      devmotron checklist me staging
+      devmotron checklist me regression
+      devmotron checklist me deploy
+   """
 
