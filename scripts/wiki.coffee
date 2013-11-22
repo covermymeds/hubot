@@ -11,13 +11,17 @@ module.exports = (robot) ->
 
 
   #robot.respond /(image|img)( me)? (.*)/i, (msg) ->
-  robot.respond /(get)( me)? (fax|faxes)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (fax|faxes)/i, (msg) ->
     wikilist_type = "faxes"
     msg.send Wikilists[wikilist_type]
 
 
-  robot.respond /(get)( me)? (harness|harnesses|xanadu|nodes|xanadunodes)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (harness|harnesses|xanadu|nodes|xanadunodes)/i, (msg) ->
     wikilist_type = "nodes"
+    msg.send Wikilists[wikilist_type]
+
+  robot.respond /(get|wiki)( me)? (central)/i, (msg) ->
+    wikilist_type = "central"
     msg.send Wikilists[wikilist_type]
 
 
@@ -39,3 +43,9 @@ Wikilists =
    for more info:
    https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/Test%20harnesses.aspx
    """
+   central:
+  """
+    staging.central.covermymeds.com
+    username: demo@covermymeds.com
+    password: testing123
+  """
