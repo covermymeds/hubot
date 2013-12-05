@@ -40,6 +40,7 @@ Checklists =
    """
       Checklist for staging CMM_PHP: see the README
       https://git.innova-partners.com/cmm/CMM_PHP#change-management
+      [ ] are there database changes?
       
       Recurring gotchas:
       [ ] ensure that the latest master branch is rebased/merged into your branch
@@ -68,6 +69,7 @@ Checklists =
   deploy:
    """
       Checklist for deploying: see a developer
+      [ ] are there database changes?
 
       Checklist for testing a deploy:
       [ ] 'bundle exec rake prod'
