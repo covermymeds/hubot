@@ -24,7 +24,7 @@ module.exports = (robot) ->
     wikilist_type = "central"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(get|wiki)( me)? (kbox|kace|kase)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (kbox|kace|kase|support|help)/i, (msg) ->
     wikilist_type = "kbox"
     msg.send Wikilists[wikilist_type]
 
@@ -56,4 +56,5 @@ Wikilists =
   kbox:
    """
    https://kbox.innova-partners.com/
+   https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/
    """
