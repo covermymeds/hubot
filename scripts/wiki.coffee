@@ -24,6 +24,10 @@ module.exports = (robot) ->
     wikilist_type = "central"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (kbox|kace|kase)/i, (msg) ->
+    wikilist_type = "kbox"
+    msg.send Wikilists[wikilist_type]
+
 
 Wikilists =
   faxes:
@@ -48,4 +52,8 @@ Wikilists =
    staging.central.covermymeds.com
    username: demo@covermymeds.com
    password: testing123
+   """
+  kbox:
+   """
+   https://kbox.innova-partners.com/
    """
