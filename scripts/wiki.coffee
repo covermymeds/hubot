@@ -32,6 +32,10 @@ module.exports = (robot) ->
     wikilist_type = "menu"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (ie)/i, (msg) ->
+    wikilist_type = "ie"
+    msg.send Wikilists[wikilist_type]
+
 
 Wikilists =
   faxes:
@@ -65,4 +69,19 @@ Wikilists =
   menu:
    """
    https://intranet.covermymeds.com/dev/SiteAssets/Dev%20Wiki/Breakfast!!!/2013-10-01%2009.35.24%20HDR.jpg
+   """
+  ie:
+   """
+   Windows XP:
+   -ie6dev
+   -ie7dev
+   -ie8dev
+
+   Windows 7:
+   -win7ie8
+   -win7ie9
+
+   Some year we will put up Windows 7 and Windows 8 IE10 machines.
+
+   https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/Browser%20Compatibility%20Testing%20Machines.aspx
    """
