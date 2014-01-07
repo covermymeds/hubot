@@ -41,6 +41,7 @@ Checklists =
       Checklist for staging CMM_PHP: see the README
       https://git.innova-partners.com/cmm/CMM_PHP#change-management
       [ ] are there database changes?
+      [ ] are the procs on staging the same as procs in production?
       
       Recurring gotchas:
       [ ] ensure that the latest master branch is rebased/merged into your branch
