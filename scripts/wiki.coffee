@@ -36,6 +36,10 @@ module.exports = (robot) ->
     wikilist_type = "ie"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(how do i logout)/i, (msg) ->
+    wikilist_type = "logout"
+    msg.send Wikilists[wikilist_type]
+
 
 Wikilists =
   faxes:
@@ -69,6 +73,13 @@ Wikilists =
   menu:
    """
    https://intranet.covermymeds.com/dev/SiteAssets/Dev%20Wiki/Breakfast!!!/2013-10-01%2009.35.24%20HDR.jpg
+   """
+  logout:
+   """
+   directly navigate here 
+     to get out of the infinite dashboard-cmm_php login logout loop:
+
+     https://navinet.covermymeds.com/user/logout
    """
   ie:
    """
