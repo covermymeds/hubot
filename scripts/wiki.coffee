@@ -36,6 +36,10 @@ module.exports = (robot) ->
     wikilist_type = "ie"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (api key|apikey|claims)/i, (msg) ->
+    wikilist_type = "claims"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(how do i logout)/i, (msg) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
@@ -95,4 +99,17 @@ Wikilists =
    Some year we will put up Windows 7 and Windows 8 IE10 machines.
 
    https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/Browser%20Compatibility%20Testing%20Machines.aspx
+   """
+  claims:
+   """
+   api_key: a4b05a8151b4ddda2739e355aefab48a
+   
+   staging: 
+   https://next.covermymeds.com
+
+   production:
+   https://claims.covermymeds.com
+
+   wiki:
+   https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/All%20about%20claims.aspx
    """
