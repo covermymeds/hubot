@@ -20,8 +20,8 @@ module.exports = (robot) ->
   LOW       = 25
   beerLevel = UNK
   saidLow   = false
-  room      = 569461 # sandbox
-  #room     = 527299 # covermymeds
+  # room      = 569461 # sandbox
+  room     = 527299 # covermymeds
 
   unk  = ["I'm not sure."]
   full = [":beers: The beer is full :beers:"]
