@@ -31,6 +31,7 @@ module.exports = (robot) ->
     msg.send getMessage()
 
   robot.router.post '/keg_status', (req, res) ->
+    res.send 200
     beerLevel = req.body["level"]
     console.log "Beer level: ", beerLevel
 
@@ -38,8 +39,6 @@ module.exports = (robot) ->
 
     saidLow = true
     getMessage().forEach (msg)-> ( robot.messageRoom room, msg )
-
-    res.send 200
 
   getMessage = ->
     return unk  if beerLevel == UNK
