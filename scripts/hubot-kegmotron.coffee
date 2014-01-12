@@ -7,6 +7,7 @@
 #
 # Commands:
 #   hubot is there beer? - tell you much much beer is in the keg
+#   hubot the keg was replaced - let devmotron know it's OK to show the "low keg" message again
 #
 # Notes:
 #
@@ -30,9 +31,13 @@ module.exports = (robot) ->
   robot.respond /is there beer\?/i, (msg) ->
     getMessage().forEach (kegMsg)-> ( msg.send kegMsg )
 
+  robot.respond /the keg was replaced/i, (msg) ->
+    saidLow = false
+    msg.send "Ok, got it"
+
   robot.router.post '/keg_status', (req, res) ->
     res.send 200
-    beerLevel = req.body["level"]
+    beerLevel = req.body["level"]  # a number from 0 ~ 100
     console.log "Beer level: ", beerLevel
 
     return if saidLow || beerLevel > LOW
