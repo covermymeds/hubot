@@ -22,10 +22,10 @@ module.exports = (robot) ->
   room      = 569461 # sandbox
   #room     = 527299 # covermymeds
 
-  unk  = "I'm not sure."
-  full = ":beers: The beer is full :beers:"
-  mid  = ":beer: The beer is getting low"
-  low  = "The beer is empty!\nhttp://31.media.tumblr.com/tumblr_li46pe1m8I1qh4nf6o1_500.gif"
+  unk  = ["I'm not sure."]
+  full = [":beers: The beer is full :beers:"]
+  mid  = [":beer: The beer is getting low"]
+  low  = ["The beer is empty!", "http://31.media.tumblr.com/tumblr_li46pe1m8I1qh4nf6o1_500.gif"]
 
   robot.respond /is there beer\?/i, (msg) ->
     msg.send getMessage()
@@ -37,7 +37,7 @@ module.exports = (robot) ->
     return if saidLow || beerLevel > LOW
 
     saidLow = true
-    robot.messageRoom room, getMessage()
+    getMessage.forEach (msg)-> ( robot.messageRoom room, msg )
 
     res.send 200
 
