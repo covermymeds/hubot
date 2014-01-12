@@ -28,7 +28,7 @@ module.exports = (robot) ->
   low  = ["The beer is empty!", "http://31.media.tumblr.com/tumblr_li46pe1m8I1qh4nf6o1_500.gif"]
 
   robot.respond /is there beer\?/i, (msg) ->
-    msg.send getMessage()
+    getMessage().forEach (kegMsg)-> ( msg.send kegMsg )
 
   robot.router.post '/keg_status', (req, res) ->
     res.send 200
