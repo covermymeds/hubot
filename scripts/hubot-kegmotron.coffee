@@ -37,7 +37,7 @@ module.exports = (robot) ->
     return if saidLow || beerLevel > LOW
 
     saidLow = true
-    getMessage.forEach (msg)-> ( robot.messageRoom room, msg )
+    getMessage().forEach (msg)-> ( robot.messageRoom room, msg )
 
     res.send 200
 
