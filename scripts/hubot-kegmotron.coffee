@@ -31,16 +31,18 @@ module.exports = (robot) ->
     msg.send getMessage()
 
   robot.router.post '/keg_status', (req, res) ->
-    # data = JSON.parse req.body
     beerLevel = req.body["level"]
+    console.log "Beer level: ", beerLevel
 
     return if saidLow || beerLevel > LOW
 
     saidLow = true
     robot.messageRoom room, getMessage()
 
+    res.send 200
+
   getMessage = ->
     return unk  if beerLevel == UNK
-    return full if beerLevel < MID
+    return full if beerLevel > MID
     return mid  if LOW < beerLevel <= MID
     return low  if beerLevel <= LOW
