@@ -31,8 +31,8 @@ module.exports = (robot) ->
     msg.send getMessage()
 
   robot.router.post '/keg_status', (req, res) ->
-    data = JSON.parse req.body.payload
-    beerLevel = data["level"]
+    # data = JSON.parse req.body
+    beerLevel = req.body["level"]
 
     return if saidLow || beerLevel > LOW
 
