@@ -15,6 +15,8 @@
 #   Mark Lorenz
 
 module.exports = (robot) ->
+  # my experiments showed a full keg registering ~55% when first attached and the rising to ___
+  # a warm empty keg weighed in ~3%.   Need to see the reading of a cold empty keg.
   UNK       = null
   MID       = 50
   LOW       = 25
