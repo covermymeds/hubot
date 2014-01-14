@@ -15,8 +15,8 @@
 #   Mark Lorenz
 
 module.exports = (robot) ->
-  # my experiments showed a full keg registering ~55% when first attached and the rising to ___
-  # a warm empty keg weighed in ~3%.   Need to see the reading of a cold empty keg.
+  # my experiments showed a mostly full keg registering ~55% when first attached and the rising to 65% after a few hours
+  # A warm, empty keg weighed in at ~3%.   Need to see the reading of a cold empty keg.
   UNK       = null
   MID       = 50
   LOW       = 25
@@ -26,9 +26,9 @@ module.exports = (robot) ->
   room     = 527299 # covermymeds
 
   unk  = ["I'm not sure."]
-  full = [":beers: The beer is full :beers:"]
+  full = [":beers: The beer is mostly full :beers:"]
   mid  = [":beer: The beer is getting low"]
-  low  = ["The beer is empty!", "http://31.media.tumblr.com/tumblr_li46pe1m8I1qh4nf6o1_500.gif"]
+  low  = ["The beer is almost empty!", "http://31.media.tumblr.com/tumblr_li46pe1m8I1qh4nf6o1_500.gif"]
 
   robot.respond /is there beer\?/i, (msg) ->
     getMessage().forEach (kegMsg)-> ( msg.send kegMsg )
