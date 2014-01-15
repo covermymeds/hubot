@@ -36,6 +36,10 @@ module.exports = (robot) ->
     wikilist_type = "ie"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (navinet|nn)/i, (msg) ->
+    wikilist_type = "navinet"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(get|wiki)( me)? (api key|apikey|claims)/i, (msg) ->
     wikilist_type = "claims"
     msg.send Wikilists[wikilist_type]
@@ -77,6 +81,17 @@ Wikilists =
   menu:
    """
    https://intranet.covermymeds.com/dev/SiteAssets/Dev%20Wiki/Breakfast!!!/2013-10-01%2009.35.24%20HDR.jpg
+   """
+  navinet:
+   """
+   Navinet Test Accounts
+   Production: https://navinet.navimedix.com
+   Caremark: https://piacc.navimedix.com
+   Staging: https://pitest.navimedix.com
+     Username: cmmTestUser1 / cmmtest
+
+   more:
+   https://basecamp.com/1756315/projects/16976-cmm-integration/messages/4673569-nn-test-accounts
    """
   logout:
    """
