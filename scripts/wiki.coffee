@@ -44,6 +44,10 @@ module.exports = (robot) ->
     wikilist_type = "claims"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (epa|caremark)/i, (msg) ->
+    wikilist_type = "epa"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(how do i logout)/i, (msg) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
@@ -127,4 +131,16 @@ Wikilists =
 
    wiki:
    https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/All%20about%20claims.aspx
+   """
+  epa:
+   """
+   state/drug/plan combos:
+   response-through-system demo CMM ePA: Ohio/Apple flavor/sample
+   response-through-system ePA: Texas/protonix/bcbs
+   response-outside-system ePA: Ohio/euflexxa/aetna
+   response-through-system caremark ePA: Ohio/Boniva/caremark + see below
+
+   wiki:
+   All about ePAs: https://intranet.covermymeds.com/dev/Dev%20Wiki/All%20about%20ePAs.aspx
+   Creating a Caremark ePA: https://intranet.covermymeds.com/dev/Dev%20Wiki/Creating%20a%20Caremark%20ePA.aspx
    """
