@@ -140,6 +140,9 @@ Wikilists =
    response-outside-system ePA: Ohio/euflexxa/aetna
    response-through-system caremark ePA: Ohio/Boniva/caremark + see below
 
+   sanity check:
+   You know it's an ePA if the URL is from dashboard.covermymeds.com or its staging equivalent.
+
    wiki:
    All about ePAs: https://intranet.covermymeds.com/dev/Dev%20Wiki/All%20about%20ePAs.aspx
    Creating a Caremark ePA: https://intranet.covermymeds.com/dev/Dev%20Wiki/Creating%20a%20Caremark%20ePA.aspx
