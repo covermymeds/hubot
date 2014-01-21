@@ -72,6 +72,8 @@ Wikilists =
    others:
    https://t1-paplus.testing.covermymeds.com
    https://t1-postmaster.testing.covermymeds.com
+   https://t1-api.testing.covermymeds.com/drugs/?api_id=mike&v=1&q=ambien
+   https://t1-npiverifier.testing.covermymeds.com
 
    DB: cmm2_testing_t1
 
