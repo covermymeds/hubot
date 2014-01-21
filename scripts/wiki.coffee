@@ -16,8 +16,12 @@ module.exports = (robot) ->
     msg.send Wikilists[wikilist_type]
 
 
-  robot.respond /(get|wiki)( me)? (harness|harnesses|xanadu|nodes|xanadunodes)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (harness|harnesses|nodes)/i, (msg) ->
     wikilist_type = "nodes"
+    msg.send Wikilists[wikilist_type]
+
+  robot.respond /(get|wiki)( me)? (xanadustaging4)/i, (msg) ->
+    wikilist_type = "xanadustaging4"
     msg.send Wikilists[wikilist_type]
 
   robot.respond /(get|wiki)( me)? (central)/i, (msg) ->
@@ -60,6 +64,22 @@ Wikilists =
    CMM by the kitchen: 6142328980
    CMM by the support: 6142328850
    """
+  xanadustaging4:
+   """
+   CMM_PHP:   https://t1-cmm.testing.covermymeds.com
+   DASHBOARD: https://t1-dashboard.testing.covermymeds.com
+
+   others:
+   https://t1-paplus.testing.covermymeds.com
+   https://t1-postmaster.testing.covermymeds.com
+
+   DB: cmm2_testing_t1
+
+   for more info:
+   https://git.innova-partners.com/infrastructure/foobar/wiki/New-environments-by-example-xanadustaging4
+   https://git.innova-partners.com/infrastructure/foobar/wiki/Xanadustaging4-task-list
+   https://git.innova-partners.com/infrastructure/foobar/wiki/Future-state-of-environments
+   """
   nodes:
    """
    rails apps hosted on xanadunode[1-4]
@@ -67,6 +87,8 @@ Wikilists =
      > cd /pub/staging/staging.dashboard.covermymeds.com/current/
    navinet hosted on cmmweb1
      > cd /pub/navinet.covermymeds.com
+
+   xanadustaging4: `devmotron get me xanadustaging4`
 
    for more info:
    https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/Test%20harnesses.aspx
