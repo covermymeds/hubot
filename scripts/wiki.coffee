@@ -32,7 +32,7 @@ module.exports = (robot) ->
     wikilist_type = "kbox"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(get|wiki)( me)? (menu)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (menu|breakfast menu)/i, (msg) ->
     wikilist_type = "menu"
     msg.send Wikilists[wikilist_type]
 
