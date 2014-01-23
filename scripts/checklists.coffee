@@ -82,6 +82,8 @@ Checklists =
           > monitor for new errors
 
       [ ] close issues
+
+      PHP: https://git.innova-partners.com/cmm/CMM_PHP/blob/master/DEPLOY.md
    """
   pull_request:
    """
