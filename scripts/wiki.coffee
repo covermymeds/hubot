@@ -21,7 +21,7 @@ module.exports = (robot) ->
     wikilist_type = "nodes"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(get|wiki)( me)? (xanadustaging4)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (xs4|xanadustaging4)/i, (msg) ->
     wikilist_type = "xanadustaging4"
     msg.send Wikilists[wikilist_type]
 
