@@ -4,6 +4,7 @@
 # Commands:
 #   hubot get me faxes - responds with CMM faxes
 #   hubot get me nodes - responds with CMM test harnesses
+#   hubot get me menu - from breakfast warehouse
 
 module.exports = (robot) ->
   capture_name = (name)->
