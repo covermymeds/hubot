@@ -59,6 +59,10 @@ module.exports = (robot) ->
     wikilist_type = "testusers"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (staging status|staging)/i, (msg) ->
+    wikilist_type = "stagingstatus"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(how do i logout)/i, (msg) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
@@ -186,4 +190,20 @@ Wikilists =
    TCPhys:Phys1
    VP23:hhhh
    VP31:hhhh
+
+   emails:
+   emailtest:Password1!
+     @ https://outlook.innova-partners.com
    """
+  stagingstatus:
+   """
+   staging.covermymeds.com:
+     > ask Boyan first before staging here
+     > all branches to be staged will need to merge the deletion branch
+       > 926-deleting-PAs
+       > (and not 926-delete-using-request-api)
+
+   navinet.covermymeds.com: no news
+   xanadustaging4: still making it work
+   """
+
