@@ -53,6 +53,10 @@ module.exports = (robot) ->
     wikilist_type = "epa"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (test users|users)/i, (msg) ->
+    wikilist_type = "testusers"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(how do i logout)/i, (msg) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
@@ -173,4 +177,11 @@ Wikilists =
    wiki:
    All about ePAs: https://intranet.covermymeds.com/dev/Dev%20Wiki/All%20about%20ePAs.aspx
    Creating a Caremark ePA: https://intranet.covermymeds.com/dev/Dev%20Wiki/Creating%20a%20Caremark%20ePA.aspx
+   """
+  testusers:
+   """
+   username:password::
+   TCPhys:Phys1
+   VP23:hhhh
+   VP31:hhhh
    """
