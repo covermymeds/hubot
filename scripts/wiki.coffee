@@ -4,6 +4,7 @@
 # Commands:
 #   hubot get me menu - from breakfast warehouse
 #   hubot get me faxes - responds with CMM faxes
+#   hubot get me staging status - any news about staging environments
 #   hubot get me nodes - responds with CMM test harnesses
 #   hubot get me xs4 - info about xanadustaging4
 #   hubot get me users - some test users and passwords
