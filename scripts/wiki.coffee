@@ -2,9 +2,11 @@
 #   displays various information
 #
 # Commands:
+#   hubot get me menu - from breakfast warehouse
 #   hubot get me faxes - responds with CMM faxes
 #   hubot get me nodes - responds with CMM test harnesses
-#   hubot get me menu - from breakfast warehouse
+#   hubot get me xs4 - info about xanadustaging4
+#   hubot get me users - some test users and passwords
 
 module.exports = (robot) ->
   capture_name = (name)->
