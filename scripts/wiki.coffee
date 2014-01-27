@@ -68,6 +68,10 @@ module.exports = (robot) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(remind|get|wiki)( me)? (git)/i, (msg) ->
+    wikilist_type = "gitcommands"
+    msg.send Wikilists[wikilist_type]
+
 
 Wikilists =
   faxes:
@@ -207,4 +211,14 @@ Wikilists =
    navinet.covermymeds.com: no news
    xanadustaging4: still making it work
    """
+  gitcommands:
+   """
+   CREATING A NEW LOCAL BRANCH
+     > git checkout -b 123-fixing-broken-crap
+     > git push -u origin 123-fixing-broken-crap
 
+   GETTING BRANCHES
+     > git branch -r
+     > git fetch origin
+     > git checkout -b test origin/test
+   """
