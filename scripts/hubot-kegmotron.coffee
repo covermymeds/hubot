@@ -16,8 +16,8 @@
 
 module.exports = (robot) ->
   UNK       = null
-  MID       = 50
-  LOW       = 25
+  MID       = 55
+  LOW       = 40
   beerLevel = UNK
   saidLow   = false
   # room      = 569461 # sandbox
