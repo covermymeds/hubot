@@ -17,6 +17,7 @@
 module.exports = (robot) ->
   # my experiments showed a mostly full keg registering ~55% when first attached and the rising to 65% after a few hours
   # A warm, empty keg weighed in at ~3%.   Need to see the reading of a cold empty keg.
+  # Looks like when the key blew this time it was ~37%
   UNK       = null
   MID       = 55
   LOW       = 40
