@@ -105,9 +105,9 @@ Wikilists =
    DB: cmm2_testing_t1
 
    for more info:
-   https://git.innova-partners.com/infrastructure/wiki/New-environments-by-example-xanadustaging4
-   https://git.innova-partners.com/infrastructure/wiki/Xanadustaging4-task-list
-   https://git.innova-partners.com/infrastructure/wiki/Future-state-of-environments
+   https://git.innova-partners.com/infrastructure/wiki/wiki/New-environments-by-example-xanadustaging4
+   https://git.innova-partners.com/infrastructure/wiki/wiki/Xanadustaging4-task-list
+   https://git.innova-partners.com/infrastructure/wiki/wiki/Future-state-of-environments
    """
   nodes:
    """
