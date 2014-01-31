@@ -183,6 +183,10 @@ Wikilists =
    """
    in cmm_tests:
        pbcopy <  config/data/sample_claim.txt
+
+   api_key: 
+       a4b05a8151b4ddda2739e355aefab48a
+       
    """
   epa:
    """
