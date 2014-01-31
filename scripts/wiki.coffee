@@ -52,6 +52,10 @@ module.exports = (robot) ->
     wikilist_type = "claims"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (sample claims|sample claim)/i, (msg) ->
+    wikilist_type = "sampleclaim"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(get|wiki)( me)? (epa|caremark)/i, (msg) ->
     wikilist_type = "epa"
     msg.send Wikilists[wikilist_type]
@@ -174,6 +178,11 @@ Wikilists =
 
    wiki:
    https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/All%20about%20claims.aspx
+   """
+  sampleclaim:
+   """
+   in cmm_tests:
+       pbcopy <  config/data/sample_claim.txt
    """
   epa:
    """
