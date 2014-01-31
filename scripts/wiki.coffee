@@ -194,7 +194,7 @@ Wikilists =
    """
   accessrecords:
    """
-   1002 - Created
+   1001 - Created
    1005 - Ownership
    1004 - Past Owner
    1002 - Key/Share User
