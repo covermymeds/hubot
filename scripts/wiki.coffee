@@ -24,6 +24,10 @@ module.exports = (robot) ->
     wikilist_type = "nodes"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (access records)/i, (msg) ->
+    wikilist_type = "accessrecords"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(get|wiki)( me)? (xs4|xanadustaging4)/i, (msg) ->
     wikilist_type = "xanadustaging4"
     msg.send Wikilists[wikilist_type]
@@ -187,6 +191,14 @@ Wikilists =
    api_key: 
        a4b05a8151b4ddda2739e355aefab48a
        
+   """
+  accessrecords:
+   """
+   1002 - Created
+   1005 - Ownership
+   1004 - Past Owner
+   1002 - Key/Share User
+   1003 - Group Access
    """
   epa:
    """
