@@ -29,8 +29,8 @@ module.exports = (robot) ->
     msg.send Wikilists[wikilist_type]
 
   robot.respond /(get|wiki)( me)? (xs4|xanadustaging4)/i, (msg) ->
-    wikilist_type = "xanadustaging4"
-    msg.send Wikilists[wikilist_type]
+    msg.send Wikilists["xanadustaging4_1"]
+    msg.send Wikilists["xanadustaging4_2"]
 
   robot.respond /(get|wiki)( me)? (central)/i, (msg) ->
     wikilist_type = "central"
@@ -76,6 +76,10 @@ module.exports = (robot) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(how do i stage on xs4)/i, (msg) ->
+    wikilist_type = "staging_on_xs4"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(remind|get|wiki)( me)? (git)/i, (msg) ->
     wikilist_type = "gitcommands"
     msg.send Wikilists[wikilist_type]
@@ -88,7 +92,7 @@ Wikilists =
    CMM by the kitchen: 6142328980
    CMM by the support: 6142328850
    """
-  xanadustaging4:
+  xanadustaging4_1:
    """
    CMM_PHP:   https://t1-cmm.testing.covermymeds.com
    DASHBOARD: https://t1-dashboard.testing.covermymeds.com
@@ -103,11 +107,21 @@ Wikilists =
    https://t1-atlas.testing.covermymeds.com
 
    DB: cmm2_testing_t1
-
+   """
+  xanadustaging4_2:
+   """
    for more info:
    https://git.innova-partners.com/infrastructure/wiki/wiki/New-environments-by-example-xanadustaging4
    https://git.innova-partners.com/infrastructure/wiki/wiki/Xanadustaging4-task-list
    https://git.innova-partners.com/infrastructure/wiki/wiki/Future-state-of-environments
+
+   `devmotron how do i stage on xs4`
+   """
+  staging_on_xs4:
+   """
+   `cap testing deploy`
+
+   that's all I know...
    """
   nodes:
    """
@@ -234,8 +248,12 @@ Wikilists =
        > 926-deleting-PAs
        > (and not 926-delete-using-request-api)
 
-   navinet.covermymeds.com: no news
-   xanadustaging4: still making it work
+   navinet.covermymeds.com: active
+
+   xanadustaging4: NPI sharing is staged here
+     > new-testing-env PR needs review
+       > need to merge into master
+         > then need need to remerge into 1127+NPI sharing branch
    """
   gitcommands:
    """
