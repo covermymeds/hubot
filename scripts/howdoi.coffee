@@ -2,6 +2,7 @@
 #   displays various information
 #
 # Commands:
+#   hubot how do i use central
 #   hubot how do i make gifs
 
 module.exports = (robot) ->
