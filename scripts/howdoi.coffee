@@ -40,14 +40,14 @@ Wikilists =
    """
   central:
    """
-   set the user up
+   1. set the user up
      > account should be CoverMyMeds Pro Demo
      > Cmm central demo epa should be enabled
 
-   send the ohio/apple/sample epa to plan
+   2. send the ohio/apple/sample epa to plan
      > `devmotron get me epa` for details
 
-   staging.central.covermymeds.com
+   3. staging.central.covermymeds.com
      > login as demo@covermymeds.com
      > pw: testing123
      > find the epa, and set the outcome
