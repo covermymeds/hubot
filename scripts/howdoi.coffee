@@ -12,6 +12,10 @@ module.exports = (robot) ->
     wikilist_type = "gifs"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(how do i )(set an epa response|use central)/i, (msg) ->
+    wikilist_type = "central"
+    msg.send Wikilists[wikilist_type]
+
   #robot.respond /(remind|get|wiki)( me)? (git)/i, (msg) ->
   #  wikilist_type = "gitcommands"
   #  msg.send Wikilists[wikilist_type]
@@ -33,4 +37,18 @@ Wikilists =
    for more information:
      > http://thenextweb.com/apple/2011/01/15/how-to-record-quick-easy-screencast-videos-with-mac-osx/#!uoIbQ
      > https://gist.github.com/dapplebeforedawn/6746343
+   """
+  central:
+   """
+   set the user up
+     > account should be CoverMyMeds Pro Demo
+     > Cmm central demo epa should be enabled
+
+   send the ohio/apple/sample epa to plan
+     > `devmotron get me epa` for details
+
+   staging.central.covermymeds.com
+     > login as demo@covermymeds.com
+     > pw: testing123
+     > find the epa, and set the outcome
    """
