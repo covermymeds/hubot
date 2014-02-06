@@ -76,7 +76,7 @@ module.exports = (robot) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(how do i stage on xs4)/i, (msg) ->
+  robot.respond /(how do i stage on xs4|how do i deploy to xs4)/i, (msg) ->
     wikilist_type = "staging_on_xs4"
     msg.send Wikilists[wikilist_type]
 
