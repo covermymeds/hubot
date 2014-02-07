@@ -32,7 +32,7 @@ module.exports = (robot) ->
     msg.send Checklists["newapi_1"]
     msg.send Checklists["newapi_3"]
 
-  robot.respond /(what is a good)(api)/i, (msg) ->
+  robot.respond /(what is a good )(api)/i, (msg) ->
     checklist_type = "good_api"
     msg.send Checklists[checklist_type]
 
