@@ -30,7 +30,6 @@ module.exports = (robot) ->
   robot.respond /(checklist)( me)? (new api|api)/i, (msg) ->
     checklist_type = "newapi"
     msg.send Checklists["newapi_1"]
-    msg.send Checklists["newapi_2"]
     msg.send Checklists["newapi_3"]
 
   robot.respond /(checklist)( me)? (deploy|deployment)/i, (msg) ->
@@ -118,29 +117,30 @@ Checklists =
    """
   newapi_1:
    """
-    ## Does It Go In An API?
-    #- [ ] Are you acting on a business object (reading or writing)?
-    #    - e.g. Requests, Forms, Users
-    #    - negative e.g. Accesses, Touches, Supplements
-    #- [ ] Will we want an outside integrator to be able to reproduce this functionality?
-    #- [ ] Will we want more than one internal application to have this functionality? (almost always, "yes")
-    #- [ ] Does this record have meaning outside of an associated business object?
-    #    - e.g. Accesses don't have meaning outside of a request, so they don't need their own API.
+    # Does It Go In An API?
+    - [ ] Are you acting on a business object (reading or writing)?
+        - e.g. Requests, Forms, Users
+        - negative e.g. Accesses, Touches, Supplements
+    - [ ] Will we want an outside integrator to be able to reproduce this functionality?
+    - [ ] Will we want more than one internal application to have this functionality? (almost always, "yes")
+    - [ ] Does this record have meaning outside of an associated business object?
+        - e.g. Accesses don't have meaning outside of a request, so they don't need their own API.
    """
-  newapi_2:
+  good_api:
    """
-    ## Characteristics of Good APIs
-    #- APIs return simple objects.
-    #- APIs have small code bases. (the requests-api is almost too big already)
-    #- Share code between APIs as minimally as possible. (use other APIs where you can)
-    #  - It's OK if more than the one API has a `User` model, but those models should be very spartan.
-    #  - It's OK for an API to have a GUI as long as it doesn't have special privileges not exposed via API. (a.k.a. the GUI is a consumer of it's own API)
-    #  - APIs should provide swagger documentation, _especially_ for internal only endpoints
-    #  - New APIs add a module to [cover_my_api](https://git.innova-partners.com/cmm/cover_my_api)
+    # Characteristics of Good APIs
+    - APIs return simple objects.
+    - APIs have small code bases. (the requests-api is almost too big already)
+    - Share code between APIs as minimally as possible. (use other APIs where you can)
+      - It's OK if more than the one API has a `User` model, but those models should be very spartan.
+      - It's OK for an API to have a GUI as long as it doesn't have special privileges not exposed via API. (a.k.a. the GUI is a consumer of it's own API)
+      - APIs should provide swagger documentation, _especially_ for internal only endpoints
+      - New APIs add a module to [cover_my_api](https://git.innova-partners.com/cmm/cover_my_api)
    """
   newapi_3:
    """
     for more info:
+      > devmotron what is a good api
       > https://git.innova-partners.com/gist/mlorenz/220
    """
   checklists:
