@@ -37,7 +37,7 @@ module.exports = (robot) ->
     checklist_type = "deploy"
     msg.send Checklists[checklist_type]
 
-  robot.respond /(checklist)( me)? (checklists)/i, (msg) ->
+  robot.respond /(checklist)( me)? (checklists?)/i, (msg) ->
     checklist_type = "checklists"
     msg.send Checklists[checklist_type]
 
