@@ -23,6 +23,10 @@ module.exports = (robot) ->
     checklist_type = "regression"
     msg.send Checklists[checklist_type]
 
+  robot.respond /(checklist)( me)? (new app|new applications|applications|apps)/i, (msg) ->
+    checklist_type = "newapplications"
+    msg.send Checklists[checklist_type]
+
   robot.respond /(checklist)( me)? (deploy|deployment)/i, (msg) ->
     checklist_type = "deploy"
     msg.send Checklists[checklist_type]
@@ -91,6 +95,16 @@ Checklists =
       https://git.innova-partners.com/cmm/CMM_PHP#change-management
 
       > next: staging
+   """
+  newapplications:
+   """
+   Creating a new app? 
+   This checklist is too long for campfire, 
+   but here is the link:
+   (also too long for campfire)
+
+      https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default&DefaultItemOpen=1
+
    """
   checklists:
    """
