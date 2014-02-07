@@ -31,6 +31,10 @@ module.exports = (robot) ->
     checklist_type = "deploy"
     msg.send Checklists[checklist_type]
 
+  robot.respond /(checklist)( me)? (checklists)/i, (msg) ->
+    checklist_type = "checklists"
+    msg.send Checklists[checklist_type]
+
 
   robot.respond /(test)( me)? (.*)/i, (msg) ->
     msg.send msg.match[3]
@@ -113,5 +117,6 @@ Checklists =
       devmotron checklist me regression
       devmotron checklist me deploy
       devmotron checklist me pull request
+      devmotron checklist me new app
    """
 
