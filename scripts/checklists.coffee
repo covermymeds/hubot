@@ -139,10 +139,10 @@ Checklists =
     #  - New APIs add a module to [cover_my_api](https://git.innova-partners.com/cmm/cover_my_api)
    """
   newapi_3:
-    """
-     for more info:
-       > https://git.innova-partners.com/gist/mlorenz/220
-    """
+   """
+    for more info:
+      > https://git.innova-partners.com/gist/mlorenz/220
+   """
   checklists:
    """
       available checklists:
