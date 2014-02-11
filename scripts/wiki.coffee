@@ -151,6 +151,11 @@ Wikilists =
    """
    https://intranet.covermymeds.com/dev/SiteAssets/Dev%20Wiki/Breakfast!!!/2013-10-01%2009.35.24%20HDR.jpg
    """
+  partners:
+   """
+   Partners Test Accounts
+     > https://intranet.covermymeds.com/dev/_layouts/15/start.aspx#/Dev%20Wiki/Test%20data.aspx
+   """
   navinet:
    """
    Navinet Test Accounts
