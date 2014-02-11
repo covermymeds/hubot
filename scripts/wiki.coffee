@@ -52,6 +52,10 @@ module.exports = (robot) ->
     wikilist_type = "navinet"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(get|wiki)( me)? (partners)/i, (msg) ->
+    wikilist_type = "partners"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(get|wiki)( me)? (api key|apikey|claims)/i, (msg) ->
     wikilist_type = "claims"
     msg.send Wikilists[wikilist_type]
