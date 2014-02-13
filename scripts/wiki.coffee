@@ -251,18 +251,17 @@ Wikilists =
    """
   stagingstatus:
    """
-   staging.covermymeds.com:
-     > ask Boyan first before staging here
-     > all branches to be staged will need to merge the deletion branch
-       > 926-deleting-PAs
-       > (and not 926-delete-using-request-api)
+   staging.covermymeds.com: active
 
    navinet.covermymeds.com: active
 
-   xanadustaging4: NPI sharing is staged here
+   xanadustaging4: active
      > new-testing-env PR needs review
-       > need to merge into master
-         > then need need to remerge into 1127+NPI sharing branch
+     > need to merge into master
+     > then this will be a fully functioning staging environment
+     > until then, we can test on it, but still 
+       > have to stage it on the navinet environs before deploying it to prod
+         
    """
   gitcommands:
    """
