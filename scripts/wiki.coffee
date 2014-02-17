@@ -251,7 +251,7 @@ Wikilists =
    """
   stagingstatus:
    """
-   staging.covermymeds.com: active
+   staging.covermymeds.com: active, ensure that you talk to RelayHealth first
 
    navinet.covermymeds.com: active
 
