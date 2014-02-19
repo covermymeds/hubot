@@ -24,7 +24,7 @@ module.exports = (robot) ->
     wikilist_type = "nodes"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(get|wiki)( me)? (access records)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (access records?|access|)/i, (msg) ->
     wikilist_type = "accessrecords"
     msg.send Wikilists[wikilist_type]
 
