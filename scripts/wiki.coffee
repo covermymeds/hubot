@@ -8,6 +8,7 @@
 #   hubot get me nodes - responds with CMM test harnesses
 #   hubot get me xs4 - info about xanadustaging4
 #   hubot get me users - some test users and passwords
+#   hubot get me ie - machines hosting various IE browsers
 
 module.exports = (robot) ->
   capture_name = (name)->
