@@ -180,5 +180,6 @@ Checklists =
       devmotron checklist me new app
       devmotron checklist me new api
       devmotron checklist me ready for QA
+      devmotron checklist me QA not needed
    """
 
