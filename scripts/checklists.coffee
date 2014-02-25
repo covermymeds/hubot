@@ -94,13 +94,17 @@ Checklists =
       [ ] are there database changes?
 
       Checklist for testing a deploy:
+      [ ] have a plan for spot-checking prod after deployment
+
       [ ] 'bundle exec rake prod'
-          > run at least 3 times for intermittent errors
+          > repeat for intermittent errors
 
       [ ] relevant manual testing (depends on what changed)
 
       [ ] errbit.covermymeds.com
           > monitor for new errors
+
+      [ ] send out deployment successful email
 
       [ ] close issues
 
