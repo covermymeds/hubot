@@ -19,7 +19,9 @@ module.exports = (robot) ->
         msg.send JSON.parse(body).pug
 
   robot.respond /pug bomb( (\d+))?/i, (msg) ->
-    if parseInt(msg.match[2]) > 5000
+    if parseInt(msg.match[2]) == 9000
+      msg.send "what 9000?! there's no way that can be right!"
+    else if parseInt(msg.match[2]) > 5000
       msg.send "srsly"
     else if parseInt(msg.match[2]) > 1000
       msg.send "guise"
@@ -37,4 +39,9 @@ module.exports = (robot) ->
     msg.http("http://pugme.herokuapp.com/count")
       .get() (err, res, body) ->
         msg.send "There are #{JSON.parse(body).pug_count} pugs."
+
+  robot.respond /cat me/i, (msg) ->
+    msg.http("http://theoldreader.com/kittens/600/400/js")
+      .get() (err, res, body) ->
+        msg.send JSON.parse(body).pug
 
