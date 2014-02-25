@@ -27,6 +27,10 @@ module.exports = (robot) ->
     checklist_type = "readyforqa"
     msg.send Checklists[checklist_type]
 
+  robot.respond /(checklist)( me)? (qa|QA)( not needed)/i, (msg) ->
+    checklist_type = "qanotneeded"
+    msg.send Checklists[checklist_type]
+
   robot.respond /(checklist)( me)? (new app|new applications|applications|apps)/i, (msg) ->
     checklist_type = "newapplications"
     msg.send Checklists[checklist_type]
@@ -155,11 +159,16 @@ Checklists =
       > devmotron what is a good api
       > https://git.innova-partners.com/gist/mlorenz/220
    """
+  qanotneeded:
+   """
+    - [ ] was it a change in text?
+   """
   readyforqa:
    """
     before marking as Ready for QA:
       - [ ] talk to Testing
-      - [ ] <add more steps here>
+      - [ ] test scripts done
+      - [ ] manual tests defined
    """
   checklists:
    """
