@@ -28,3 +28,8 @@ module.exports = (robot) ->
     Status[msg.match[2]] = msg.match[1]
     msg.send "noted"
 
+  robot.respond /clear (.*)/i, (msg) ->
+    #indices start at 1 not 0
+    delete Status[msg.match[1]]
+    msg.send "cleared"
+
