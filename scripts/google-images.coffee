@@ -27,6 +27,12 @@ module.exports = (robot) ->
       imageMe msg, imagery, false, true, (url) ->
         msg.send "#{mustachify}#{url}"
 
+  robot.respond /(.*) bomb( (\d+))?/i, (msg) ->
+    count = msg.match[2] || 5
+    for i in [1..count]
+      imageMe msg, msg.match[1], (url) ->
+        msg.send url
+
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
   cb = faces if typeof faces == 'function'
