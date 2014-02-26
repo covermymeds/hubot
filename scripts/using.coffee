@@ -4,6 +4,7 @@
 # Commands:
 #   hubot get me status - displays status of things being used
 #   hubot x using y - lets devmotron know that x is using y
+#   hubot clear y - clears y from devmotron's notes
 
 
 
@@ -16,9 +17,12 @@ module.exports = (robot) ->
 
   robot.respond /(get)( me)? (status)/i, (msg) ->
     #msg.send Status["NN"]
-    msg.send Status
-    for key, value of Status
-      msg.send "#{value} using #{key}"
+    #msg.send Status
+    if Object.keys(Status).length == 0
+      msg.send "not keeping track of anything right now;\nuse `devmotron x using y`"
+    else
+      for key, value of Status
+        msg.send "#{value} using #{key}"
 
 
   robot.respond /(.*) using (.*)/i, (msg) ->
