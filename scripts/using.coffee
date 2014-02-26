@@ -23,7 +23,8 @@ module.exports = (robot) ->
 
   robot.respond /(.*) using (.*)/i, (msg) ->
     #indices start at 1 not 0
-    msg.send msg.match[1]
-    msg.send msg.match[2]
+    #msg.send msg.match[1]
+    #msg.send msg.match[2]
     Status[msg.match[2]] = msg.match[1]
+    msg.send "noted"
 
