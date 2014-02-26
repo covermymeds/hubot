@@ -3,7 +3,7 @@
 #
 # Commands:
 #   hubot get me status - displays status of things being used
-#   hubot i'm using x - lets devmotron know that you are using x
+#   hubot x using y - lets devmotron know that x is using y
 
 
 
