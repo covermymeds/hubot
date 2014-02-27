@@ -9,6 +9,10 @@
 
 
 Status = {}
+#defaults
+Status["NN"] = "not sure if anyone"
+Status["T1"] = "not sure if anyone"
+Status["T2"] = "not sure if anyone"
 
 module.exports = (robot) ->
   capture_name = (name)->
@@ -22,7 +26,7 @@ module.exports = (robot) ->
       msg.send "not keeping track of anything right now;\nuse `devmotron x using y`"
     else
       for key, value of Status
-        msg.send "#{value} using #{key}"
+        msg.send "#{value} is using #{key}"
 
 
   robot.respond /(['"\w\d .\-_]+) (?:is )?using (['"\w .\-_]+)/i, (msg) ->
@@ -36,4 +40,5 @@ module.exports = (robot) ->
     #indices start at 1 not 0
     delete Status[msg.match[1]]
     msg.send "cleared"
+
 
