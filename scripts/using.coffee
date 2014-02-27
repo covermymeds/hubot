@@ -25,7 +25,7 @@ module.exports = (robot) ->
         msg.send "#{value} using #{key}"
 
 
-  robot.respond /(.*) using (.*)/i, (msg) ->
+  robot.respond /(['"\w\d .\-_]+) (?:is )?using (['"\w .\-_]+)/i, (msg) ->
     #indices start at 1 not 0
     #msg.send msg.match[1]
     #msg.send msg.match[2]
