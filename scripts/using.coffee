@@ -10,13 +10,9 @@
 
 Status = {}
 #defaults
-#Status["NN"] = "not sure if anyone"
-#Status["T1"] = "not sure if anyone"
-#Status["T2"] = "not sure if anyone"
-Status["NN"] = "Vasanth"
-Status["T1"] = "Benjamin"
-Status["T2"] = "nobody"
-Status["NN-Dashboard"] = "Boyan"
+Status["NN"] = "not sure if anyone"
+Status["T1"] = "not sure if anyone"
+Status["T2"] = "not sure if anyone"
 
 module.exports = (robot) ->
   capture_name = (name)->
