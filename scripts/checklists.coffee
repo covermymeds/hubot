@@ -183,6 +183,7 @@ Checklists =
       devmotron checklist me deploy
       devmotron checklist me pull request
       devmotron checklist me new app
+      devmotron checklist me new feature
       devmotron checklist me new api
       devmotron checklist me ready for QA
       devmotron checklist me QA not needed
