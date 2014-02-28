@@ -34,6 +34,12 @@ module.exports = (robot) ->
   robot.respond /(checklist)( me)? (new apps?|new applications?|applications?|apps?|new features?|features?)/i, (msg) ->
     checklist_type = "newapplications"
     msg.send Checklists[checklist_type]
+    msg.send ":white_square: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
+    msg.send "."
+    msg.send "."
+    msg.send "."
+    msg.send ":white_square: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
+
 
   robot.respond /(checklist)( me)? (new api|api)/i, (msg) ->
     checklist_type = "newapi"
@@ -127,14 +133,6 @@ Checklists =
       Please make sure you consult the New Application / Feature checklist at least twice
       (towards the beginning and towards the end)
       when you are working on a new project or a major new feature.
-
-      - [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default
-      .
-      .
-      .
-      - [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default
-
-
    """
   newapi_1:
    """
