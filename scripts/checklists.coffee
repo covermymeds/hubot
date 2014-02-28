@@ -34,11 +34,21 @@ module.exports = (robot) ->
   robot.respond /(checklist)( me)? (new apps?|new applications?|applications?|apps?|new features?|features?)/i, (msg) ->
     checklist_type = "newapplications"
     msg.send Checklists[checklist_type]
-    msg.send ":white_square: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
+    for i in [1..1000]
+
+    msg.send "- [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
+    for i in [1..1000]
+
     msg.send "."
+    for i in [1..1000]
+
     msg.send "."
+    for i in [1..1000]
+
     msg.send "."
-    msg.send ":white_square: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
+    for i in [1..1000]
+
+    msg.send "- [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
 
 
   robot.respond /(checklist)( me)? (new api|api)/i, (msg) ->
