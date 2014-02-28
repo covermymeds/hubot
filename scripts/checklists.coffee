@@ -32,16 +32,10 @@ module.exports = (robot) ->
     msg.send Checklists[checklist_type]
 
   robot.respond /(checklist)( me)? (new apps?|new applications?|applications?|apps?|new features?|features?)/i, (msg) ->
-    checklist_type = "newapplications"
-    #msg.send Checklists[checklist_type]
     msg.send "New Application / Feature checklist:\n
       Please make sure you consult the New Application / Feature checklist at least twice\n
       (towards the beginning and towards the end)\n
       when you are working on a new project or a major new feature."
-    msg.send "- [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
-    msg.send "."
-    msg.send "."
-    msg.send "."
     msg.send "- [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default"
 
 
@@ -130,9 +124,6 @@ Checklists =
       https://git.innova-partners.com/cmm/CMM_PHP#change-management
 
       > next: staging
-   """
-  newapplications:
-   """
    """
   newapi_1:
    """
