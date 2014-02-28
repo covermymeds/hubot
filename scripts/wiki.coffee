@@ -93,9 +93,15 @@ module.exports = (robot) ->
 Wikilists =
   faxes:
    """
-   Use these faxes for testing:
-   CMM by the kitchen: 6142328980
-   CMM by the support: 6142328850
+   Use this fax for testing:
+     email_test_fax: 614-420-2128
+     email_test_email: emailtest@covermymeds.com
+     email_test_username: emailtest
+     email_test_password: whatthewhat
+
+   Use sparingly, and retrieve faxes promptly:
+     CMM by the kitchen: 6142328980
+     CMM by the support: 6142328850
    """
   xanadustaging4_1:
    """
