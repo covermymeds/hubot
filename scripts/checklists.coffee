@@ -31,7 +31,7 @@ module.exports = (robot) ->
     checklist_type = "qanotneeded"
     msg.send Checklists[checklist_type]
 
-  robot.respond /(checklist)( me)? (new app|new applications|applications|apps)/i, (msg) ->
+  robot.respond /(checklist)( me)? (new apps?|new applications?|applications?|apps?|new features?|features?)/i, (msg) ->
     checklist_type = "newapplications"
     msg.send Checklists[checklist_type]
 
@@ -123,12 +123,17 @@ Checklists =
    """
   newapplications:
    """
-   Creating a new app? 
-   This checklist is too long for campfire, 
-   but here is the link:
-   (also too long for campfire)
+   New Application / Feature checklist:
+      Please make sure you consult the New Application / Feature checklist at least twice
+      (towards the beginning and towards the end)
+      when you are working on a new project or a major new feature.
 
-      https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default&DefaultItemOpen=1
+      - [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default
+      .
+      .
+      .
+      - [ ] https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=/dev/Shared%20Documents/Policies%20-%20Procedures/Templates,%20Examples,%20Checklists,%20and%20Extras/Dev/New_Application_Feature_Checklist.docx&action=default
+
 
    """
   newapi_1:
