@@ -19,7 +19,7 @@ module.exports = (robot) ->
     (name + "").trim()
 
 
-  robot.respond /(get)( me)? (status)/i, (msg) ->
+  robot.respond /(,? what is | get me | get | get [\w]+ )?(status)/i, (msg) ->
     #msg.send Status["NN"]
     #msg.send Status
     if Object.keys(Status).length == 0
