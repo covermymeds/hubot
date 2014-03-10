@@ -4,6 +4,7 @@
 # Commands:
 #   hubot how do i use central
 #   hubot how do i make gifs
+#   hubot how do i masquerade
 
 module.exports = (robot) ->
   capture_name = (name)->
@@ -16,6 +17,9 @@ module.exports = (robot) ->
   robot.respond /(how do i )(set an epa response|use central)/i, (msg) ->
     wikilist_type = "central"
     msg.send Wikilists[wikilist_type]
+
+  robot.respond /(how do i )(masquerade)/i, (msg) ->
+    msg.send "https://intranet.covermymeds.com/dev/Dev%20Wiki/How%20to%20Masquerade%20as%20a%20User.aspx"
 
   #robot.respond /(remind|get|wiki)( me)? (git)/i, (msg) ->
   #  wikilist_type = "gitcommands"
