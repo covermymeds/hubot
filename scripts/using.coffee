@@ -10,7 +10,7 @@
 
 Status = {}
 #defaults
-Status["NN"] = "not sure if anyone"
+Status["NN until next week"] = "Vasanth"
 Status["T1"] = "not sure if anyone"
 Status["T2"] = "not sure if anyone"
 
