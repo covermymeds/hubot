@@ -49,8 +49,10 @@ module.exports = (robot) ->
     msg.send "noted"
 
   robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
+    robot.brain.emit 'connect'
     robot.brain.status = msg.match[2]
     msg.send "noted"
+    robot.brain.emit 'save'
 
   robot.respond /clear (.*)/i, (msg) ->
     #indices start at 1 not 0
