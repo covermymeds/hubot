@@ -17,15 +17,14 @@ Status["T3"] = "Nathan and Ryan"
 Status["staging.epamotron"] = "Brian and Jon"
 
 module.exports = (robot) ->
-  capture_name = (name)->
-    (name + "").trim()
+  robot.brain.on 'loaded', ->
+    capture_name = (name)->
+      (name + "").trim()
 
-  robot.brain.emit 'connect'
-
+  #robot.brain.emit 'connect'
+  #
   # wait until the brain has been initialized 
   # and there is a database connection
-  robot.brain.on 'loaded', ->
-    robot.brain.test = {testing1: "1", testing2: "2"}
 
 
   robot.respond /(,? what is | get me | get | get [\w]+ )?(status)/i, (msg) ->
