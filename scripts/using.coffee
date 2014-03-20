@@ -20,6 +20,11 @@ module.exports = (robot) ->
   capture_name = (name)->
     (name + "").trim()
 
+  # wait until the brain has been initialized 
+  # and there is a database connection
+  robot.brain.on 'loaded', ->
+    robot.brain.test = {testing1: "1", testing2: "2"}
+
 
   robot.respond /(,? what is | get me | get | get [\w]+ )?(status)/i, (msg) ->
     #msg.send Status["NN"]
@@ -30,12 +35,20 @@ module.exports = (robot) ->
       for key, value of Status
         msg.send "#{value} is using #{key}"
 
+      msg.send robot.brain.status
+      robot.brain.emit 'save'
+      robot.brain.emit 'connected'
+
 
   robot.respond /(['"\w\d.\-_ ]+) (?:is |are |)using (['"\w .\-_]+)/i, (msg) ->
     #indices start at 1 not 0
     #msg.send msg.match[1]
     #msg.send msg.match[2]
     Status[msg.match[2]] = msg.match[1]
+    msg.send "noted"
+
+  robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
+    robot.brain.status = msg.match[2]
     msg.send "noted"
 
   robot.respond /clear (.*)/i, (msg) ->
