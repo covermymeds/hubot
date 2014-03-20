@@ -12,7 +12,9 @@ Status = {}
 #defaults
 Status["NN until next week"] = "Vasanth"
 Status["T1"] = "not sure if anyone"
-Status["T2"] = "not sure if anyone"
+Status["T2"] = "Nathan and Ryan"
+Status["T3"] = "Nathan and Ryan"
+Status["staging.epamotron"] = "Brian and Jon"
 
 module.exports = (robot) ->
   capture_name = (name)->
@@ -29,7 +31,7 @@ module.exports = (robot) ->
         msg.send "#{value} is using #{key}"
 
 
-  robot.respond /(['"\w\d.\-_]+) (?:is |are |)using (['"\w .\-_]+)/i, (msg) ->
+  robot.respond /(['"\w\d.\-_ ]+) (?:is |are |)using (['"\w .\-_]+)/i, (msg) ->
     #indices start at 1 not 0
     #msg.send msg.match[1]
     #msg.send msg.match[2]
