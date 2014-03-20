@@ -20,6 +20,8 @@ module.exports = (robot) ->
   capture_name = (name)->
     (name + "").trim()
 
+  robot.brain.emit 'connect'
+
   # wait until the brain has been initialized 
   # and there is a database connection
   robot.brain.on 'loaded', ->
@@ -37,7 +39,6 @@ module.exports = (robot) ->
 
       msg.send robot.brain.status
       robot.brain.emit 'save'
-      robot.brain.emit 'connected'
 
 
   robot.respond /(['"\w\d.\-_ ]+) (?:is |are |)using (['"\w .\-_]+)/i, (msg) ->
