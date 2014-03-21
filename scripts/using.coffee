@@ -19,7 +19,6 @@ Status["T3"] = "Nathan and Ryan"
 module.exports = (robot) ->
   robot.brain.status = {}
   robot.brain.on 'loaded', ->
-    robot.brain.ooo = {} unless Object.keys(robot.brain.ooo).length != 0
     capture_name = (name)->
       (name + "").trim()
 
