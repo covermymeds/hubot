@@ -36,8 +36,12 @@ module.exports = (robot) ->
       for key, value of Status
         msg.send "#{value} is using #{key}"
 
-      msg.send robot.brain.status
-      #robot.brain.emit 'save'
+  robot.respond /(,? what is | get me | get | get [\w]+ )?(bs)/i, (msg) ->
+    if Object.keys(robot.brain.status).length == 0
+      msg.send "not keeping track of anything right now;\nuse `devmotron x using y`"
+    else
+      for key, value of robot.brain.status
+        msg.send "#{value} is using #{key}"
 
 
   robot.respond /(['"\w\d.\-_ ]+) (?:is |are |)using (['"\w .\-_]+)/i, (msg) ->
@@ -49,7 +53,7 @@ module.exports = (robot) ->
 
   robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
     #robot.brain.emit 'connect'
-    robot.brain.status = {a: msg.match[2]}
+    robot.brain.status[msg.match[2]] = msg.match[1]
     msg.send "noted"
     #robot.brain.emit 'save'
 
