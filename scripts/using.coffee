@@ -57,6 +57,7 @@ module.exports = (robot) ->
 
   robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
     #robot.brain.emit 'connect'
+    robot.brain.status = {}
     robot.brain.status[msg.match[2]] = msg.match[1]
     msg.send "noted"
     #robot.brain.emit 'save'
