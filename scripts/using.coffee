@@ -38,6 +38,8 @@ module.exports = (robot) ->
 
   robot.respond /(,? what is | get me | get | get [\w]+ )?(bs)/i, (msg) ->
     msg.send "BS"
+    output = Util.inspect(robot.brain.status)
+    msg.send output
     if Object.keys(robot.brain.status).length == 0
       msg.send "not keeping track of anything right now;\nuse `devmotron x using y`"
     else
