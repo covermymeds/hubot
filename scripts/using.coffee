@@ -7,6 +7,7 @@
 #   hubot clear y - clears y from devmotron's notes
 
 
+Util = require 'util'
 
 Status = {}
 #defaults
