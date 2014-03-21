@@ -37,6 +37,7 @@ module.exports = (robot) ->
         msg.send "#{value} is using #{key}"
 
   robot.respond /(,? what is | get me | get | get [\w]+ )?(bs)/i, (msg) ->
+    msg.send "BS"
     if Object.keys(robot.brain.status).length == 0
       msg.send "not keeping track of anything right now;\nuse `devmotron x using y`"
     else
