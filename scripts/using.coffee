@@ -18,9 +18,10 @@ Status["T3"] = "Nathan and Ryan"
 Status["staging.epamotron"] = "Brian and Jon"
 
 module.exports = (robot) ->
-  robot.brain.on 'loaded', ->
-    capture_name = (name)->
-      (name + "").trim()
+  robot.brain.status = {} ->
+    robot.brain.on 'loaded', ->
+      capture_name = (name)->
+        (name + "").trim()
 
   #robot.brain.emit 'connect'
   #
@@ -57,7 +58,6 @@ module.exports = (robot) ->
 
   robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
     #robot.brain.emit 'connect'
-    robot.brain.status = {}
     robot.brain.status[msg.match[2]] = msg.match[1]
     msg.send "noted"
     robot.brain.emit 'save'
