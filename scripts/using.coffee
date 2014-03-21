@@ -60,7 +60,7 @@ module.exports = (robot) ->
     robot.brain.status = {}
     robot.brain.status[msg.match[2]] = msg.match[1]
     msg.send "noted"
-    #robot.brain.emit 'save'
+    robot.brain.emit 'save'
 
   robot.respond /clear (.*)/i, (msg) ->
     #indices start at 1 not 0
