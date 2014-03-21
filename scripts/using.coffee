@@ -73,7 +73,7 @@ module.exports = (robot) ->
   robot.respond /(['"\w\d.\-_ ]+) will be out (['"\w .\-_]+)/i, (msg) ->
     robot.brain.ooo[msg.match[1]] = msg.match[2]
     msg.send "OOO noted"
-    robot.brain.emit 'save'
+    robot.brain.emit 'save' (robot.brain.ooo)
 
   robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
     #robot.brain.emit 'connect'
