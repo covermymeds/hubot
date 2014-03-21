@@ -18,6 +18,7 @@ Status["T3"] = "Nathan and Ryan"
 
 module.exports = (robot) ->
   robot.brain.status = {}
+  robot.brain.ooo = {}
   robot.brain.on 'loaded', ->
     capture_name = (name)->
       (name + "").trim()
@@ -47,6 +48,12 @@ module.exports = (robot) ->
       for key, value of robot.brain.status
         msg.send "#{value} is using #{key}"
 
+  robot.respond /(,? what is | get me | get | get [\w]+ )?(schedule)/i, (msg) ->
+    if Object.keys(robot.brain.ooo).length == 0
+      msg.send "not keeping track of anything right now;"
+    else
+      for key, value of robot.brain.ooo
+        msg.send "#{key} is out #{value}"
 
   robot.respond /(['"\w\d.\-_ ]+) (?:is |are |)using (['"\w .\-_]+)/i, (msg) ->
     #indices start at 1 not 0
@@ -54,6 +61,10 @@ module.exports = (robot) ->
     #msg.send msg.match[2]
     Status[msg.match[2]] = msg.match[1]
     msg.send "noted"
+
+  robot.respond /(['"\w\d.\-_ ]+) will be out (['"\w .\-_]+)/i, (msg) ->
+    robot.brain.ooo[msg.match[1]] = msg.match[2]
+    msg.send "OOO noted"
 
   robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
     #robot.brain.emit 'connect'
@@ -64,6 +75,11 @@ module.exports = (robot) ->
   robot.respond /clear (.*)/i, (msg) ->
     #indices start at 1 not 0
     delete Status[msg.match[1]]
+    msg.send "cleared"
+
+  robot.respond /(['"\w\d.\-_ ]+) returned/i, (msg) ->
+    #indices start at 1 not 0
+    delete robot.brain.ooo[msg.match[1]]
     msg.send "cleared"
 
 
