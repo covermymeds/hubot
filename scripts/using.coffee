@@ -17,8 +17,9 @@ Status["T2"] = "Nathan and Ryan"
 Status["T3"] = "Nathan and Ryan"
 
 module.exports = (robot) ->
-  robot.brain.status = {}
   robot.brain.on 'loaded', ->
+    robot.brain.status ||= {}
+    robot.brain.ooo ||= {}
     capture_name = (name)->
       (name + "").trim()
 
