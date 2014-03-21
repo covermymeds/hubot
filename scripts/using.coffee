@@ -15,13 +15,12 @@ Status["NN until next week"] = "Vasanth"
 Status["T1"] = "not sure if anyone"
 Status["T2"] = "Nathan and Ryan"
 Status["T3"] = "Nathan and Ryan"
-Status["staging.epamotron"] = "Brian and Jon"
 
 module.exports = (robot) ->
-  robot.brain.status = {} ->
-    robot.brain.on 'loaded', ->
-      capture_name = (name)->
-        (name + "").trim()
+  robot.brain.status = {}
+  robot.brain.on 'loaded', ->
+    capture_name = (name)->
+      (name + "").trim()
 
   #robot.brain.emit 'connect'
   #
