@@ -18,8 +18,8 @@ Status["T3"] = "Nathan and Ryan"
 
 module.exports = (robot) ->
   robot.brain.status = {}
-  robot.brain.ooo = {}
   robot.brain.on 'loaded', ->
+    robot.brain.ooo = {} unless Object.keys(robot.brain.ooo).length != 0
     capture_name = (name)->
       (name + "").trim()
 
@@ -38,6 +38,10 @@ module.exports = (robot) ->
       for key, value of Status
         msg.send "#{value} is using #{key}"
 
+
+
+
+
   robot.respond /(,? what is | get me | get | get [\w]+ )?(bs)/i, (msg) ->
     msg.send "BS"
     output = Util.inspect(robot.brain.status)
@@ -48,12 +52,16 @@ module.exports = (robot) ->
       for key, value of robot.brain.status
         msg.send "#{value} is using #{key}"
 
+    robot.brain.emit 'save'
+
   robot.respond /(,? what is | get me | get | get [\w]+ )?(schedule)/i, (msg) ->
     if Object.keys(robot.brain.ooo).length == 0
-      msg.send "not keeping track of anything right now;"
+      msg.send "not keeping track of anything right now;\nuse `devmotron <name> will be out <Monday and Tuesday>`"
     else
       for key, value of robot.brain.ooo
         msg.send "#{key} is out #{value}"
+
+    robot.brain.emit 'save'
 
   robot.respond /(['"\w\d.\-_ ]+) (?:is |are |)using (['"\w .\-_]+)/i, (msg) ->
     #indices start at 1 not 0
@@ -65,6 +73,7 @@ module.exports = (robot) ->
   robot.respond /(['"\w\d.\-_ ]+) will be out (['"\w .\-_]+)/i, (msg) ->
     robot.brain.ooo[msg.match[1]] = msg.match[2]
     msg.send "OOO noted"
+    robot.brain.emit 'save'
 
   robot.respond /(['"\w\d.\-_ ]+) brainstore (['"\w .\-_]+)/i, (msg) ->
     #robot.brain.emit 'connect'
