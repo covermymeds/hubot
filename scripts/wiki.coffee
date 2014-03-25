@@ -94,17 +94,19 @@ Wikilists =
   faxes:
    """
    Use this fax for testing:
-     email_test_fax: 614-420-2128
-     email_test_email: emailtest@covermymeds.com
+     email_test_fax:      6144202128
+     email_test_email:    emailtest@covermymeds.com
      email_test_username: emailtest
      email_test_password: whatthewhat
 
-   auto fail:    614-555-5555
-   auto succeed: 999-9999
+   Use these if you don't need to send/test a PDF,
+   they will set the fax state to fail/success:
+     auto fail:           6145555555
+     auto succeed:        6149999999
 
    Use sparingly, and retrieve faxes promptly:
-     CMM by the kitchen: 6142328980
-     CMM by the support: 6142328850
+     CMM by the kitchen:  6142328980
+     CMM by the support:  6142328850
    """
   xanadustaging4_1:
    """
