@@ -99,6 +99,9 @@ Wikilists =
      email_test_username: emailtest
      email_test_password: whatthewhat
 
+   auto fail:    614-555-5555
+   auto succeed: 999-9999
+
    Use sparingly, and retrieve faxes promptly:
      CMM by the kitchen: 6142328980
      CMM by the support: 6142328850
