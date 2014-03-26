@@ -11,7 +11,7 @@ Util = require 'util'
 
 Status = {}
 #defaults
-Status["NN until next week"] = "Vasanth"
+Status["NN until next week"] = "NPI Sharing"
 Status["T1"] = "not sure if anyone"
 Status["T2"] = "Nathan and Ryan"
 Status["T3"] = "Nathan and Ryan"
@@ -20,6 +20,8 @@ module.exports = (robot) ->
   robot.brain.on 'loaded', ->
     robot.brain.status ||= {}
     robot.brain.ooo ||= {}
+    robot.brain.ooo["Mark"] = "Friday"
+    robot.brain.ooo["Vasanth"] = "Wednesday through Friday"
     capture_name = (name)->
       (name + "").trim()
 
