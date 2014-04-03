@@ -11,7 +11,7 @@ Util = require 'util'
 
 Status = {}
 #defaults
-Status["NN until next week"] = "NPI Sharing"
+Status["NN"] = "Lash"
 Status["T1"] = "not sure if anyone"
 Status["T2"] = "Nathan and Ryan"
 Status["T3"] = "Nathan and Ryan"
