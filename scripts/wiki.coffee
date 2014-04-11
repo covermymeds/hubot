@@ -112,7 +112,7 @@ Wikilists =
    """
   xanadustaging4_1:
    """
-   CMM_PHP:   https://t#{msg.match[1]}-cmm.testing.covermymeds.com
+   CMM_PHP:   https://t1-cmm.testing.covermymeds.com
    DASHBOARD: https://t1-dashboard.testing.covermymeds.com
    AUTOBAHN:  https://t1-admin.testing.covermymeds.com
 
