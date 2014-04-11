@@ -11,7 +11,7 @@ Util = require 'util'
 
 Status = {}
 #defaults
-Status["NN"] = "Lash"
+Status["NN"] = "not sure if anyone"
 Status["T1"] = "not sure if anyone"
 Status["T2"] = "not sure if anyone"
 Status["T3"] = "not sure if anyone"
