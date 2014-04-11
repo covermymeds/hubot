@@ -81,9 +81,8 @@ module.exports = (robot) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(how do i stage on xs4|how do i deploy to xs4)/i, (msg) ->
-    wikilist_type = "staging_on_xs4"
-    msg.send Wikilists[wikilist_type]
+  robot.respond /(how do i stage on t)(\d+)/i, (msg) ->
+    msg.send "`APP_ID=t#{msg.match[1]} cap testing deploy`"
 
   robot.respond /(something went wrong in testing)/i, (msg) ->
     msg.send "record it here: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=%2Fdev%2FShared%20Documents%2FAJG%20Shared%20Docs%2FWhat%20Went%20Wrong%20in%20Testing%2Exlsx&action=edit"
@@ -135,12 +134,6 @@ Wikilists =
    https://git.innova-partners.com/infrastructure/wiki/wiki/Future-state-of-environments
 
    `devmotron how do i stage on xs4`
-   """
-  staging_on_xs4:
-   """
-   `cap testing deploy`
-
-   that's all I know...
    """
   nodes:
    """
