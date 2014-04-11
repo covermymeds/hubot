@@ -6,7 +6,7 @@
 #   hubot get me faxes - responds with CMM faxes
 #   hubot get me staging status - any news about staging environments
 #   hubot get me nodes - responds with CMM test harnesses
-#   hubot get me xs4 - info about xanadustaging4
+#   hubot get me t1 - info about t1
 #   hubot get me users - some test users and passwords
 #   hubot get me ie - machines hosting various IE browsers
 
@@ -29,7 +29,7 @@ module.exports = (robot) ->
     wikilist_type = "accessrecords"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(get|wiki)( me)? (xs4|xanadustaging4)/i, (msg) ->
+  robot.respond /(?:get|wiki)(?: me)? t(\d+)/i, (msg) ->
     msg.send Wikilists["xanadustaging4_1"]
     msg.send Wikilists["xanadustaging4_2"]
 
@@ -112,7 +112,7 @@ Wikilists =
    """
   xanadustaging4_1:
    """
-   CMM_PHP:   https://t1-cmm.testing.covermymeds.com
+   CMM_PHP:   https://t#{msg.match[1]}-cmm.testing.covermymeds.com
    DASHBOARD: https://t1-dashboard.testing.covermymeds.com
    AUTOBAHN:  https://t1-admin.testing.covermymeds.com
 
@@ -132,8 +132,6 @@ Wikilists =
    https://git.innova-partners.com/infrastructure/wiki/wiki/New-environments-by-example-xanadustaging4
    https://git.innova-partners.com/infrastructure/wiki/wiki/Xanadustaging4-task-list
    https://git.innova-partners.com/infrastructure/wiki/wiki/Future-state-of-environments
-
-   `devmotron how do i stage on xs4`
    """
   nodes:
    """
