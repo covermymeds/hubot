@@ -85,6 +85,9 @@ module.exports = (robot) ->
     wikilist_type = "staging_on_xs4"
     msg.send Wikilists[wikilist_type]
 
+  robot.respond /(something went wrong in testing)/i, (msg) ->
+    msg.send "record it here: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=%2Fdev%2FShared%20Documents%2FAJG%20Shared%20Docs%2FWhat%20Went%20Wrong%20in%20Testing%2Exlsx&action=edit"
+
   robot.respond /(remind|get|wiki)( me)? (git)/i, (msg) ->
     wikilist_type = "gitcommands"
     msg.send Wikilists[wikilist_type]
