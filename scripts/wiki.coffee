@@ -81,7 +81,7 @@ module.exports = (robot) ->
     wikilist_type = "logout"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(how do i stage on t)(\d+)/i, (msg) ->
+  robot.respond /how do i stage (?:on|to) t(\d+)/i, (msg) ->
     msg.send "`APP_ID=t#{msg.match[1]} cap testing deploy`"
 
   robot.respond /(something went wrong in testing)/i, (msg) ->
