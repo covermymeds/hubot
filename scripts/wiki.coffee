@@ -84,7 +84,7 @@ module.exports = (robot) ->
   robot.respond /how do i stage (?:on|to) (?:t|T)(\d+)/i, (msg) ->
     msg.send "`APP_ID=t#{msg.match[1]} cap testing deploy`"
 
-  robot.respond /(something went wrong in testing)/i, (msg) ->
+  robot.respond /(?:what if )?(something went wrong in testing)/i, (msg) ->
     msg.send "record it here: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=%2Fdev%2FShared%20Documents%2FAJG%20Shared%20Docs%2FWhat%20Went%20Wrong%20in%20Testing%2Exlsx&action=edit"
 
   robot.respond /(remind|get|wiki)( me)? (git)/i, (msg) ->
