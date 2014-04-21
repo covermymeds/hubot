@@ -15,11 +15,13 @@ module.exports = (robot) ->
     (name + "").trim()
 
 
-  #robot.respond /(image|img)( me)? (.*)/i, (msg) ->
+  robot.respond /(get|wiki)( me)? (db|repl)/i, (msg) ->
+    wikilist_type = "db"
+    msg.send Wikilists[wikilist_type]
+
   robot.respond /(get|wiki)( me)? (fax|faxes)/i, (msg) ->
     wikilist_type = "faxes"
     msg.send Wikilists[wikilist_type]
-
 
   robot.respond /(get|wiki)( me)? (harness|harnesses|nodes)/i, (msg) ->
     wikilist_type = "nodes"
@@ -232,6 +234,14 @@ Wikilists =
    1002 - Key/Share User
    1003 - Group Access
    """
+  db:
+   """
+   when post-deploy testing in production,
+   should you need to check the DB,
+   there is a replication DB that is updated
+   with a few minutes delay:
+     sydney: cmm2_repl
+   """
   epa:
    """
    state/drug/plan combos:
@@ -270,7 +280,6 @@ Wikilists =
      > then this will be a fully functioning staging environment
      > until then, we can test on it, but still 
        > have to stage it on the navinet environs before deploying it to prod
-         
    """
   gitcommands:
    """
