@@ -15,86 +15,43 @@ module.exports = (robot) ->
     (name + "").trim()
 
 
-  robot.respond /(?:retrieve|tell)(?: me)? (.*)/i, (msg) ->
+  robot.respond /(?:get|wiki)(?: me)? (.*)/i, (msg) ->
     if msg.match[0].match(/(db|repl)/i)
-      wikilist_type = "db"
-      msg.send "DB"
-      msg.send wikilist_type
       msg.send Wikilists["db"]
     else if msg.match[0].match(/(harness|harnesses|nodes)/i)
-      wikilist_type = "nodes"
-      msg.send "NODES"
-      msg.send wikilist_type
-    else
-      msg.send "NOTHING"
+      msg.send Wikilists["nodes"]
+    else if msg.match[0].match(/(fax|faxes)/i)
+      msg.send Wikilists["faxes"]
+    else if msg.match[0].match(/(access records?|access)/i)
+      msg.send Wikilists["accessrecords"]
+    else if msg.match[0].match(/t(\d+)/i)
+      msg.send Wikilists["xanadustaging4_1"]
+      msg.send Wikilists["xanadustaging4_2"]
+    else if msg.match[0].match(/(central)/i)
+      msg.send Wikilists["central"]
+    else if msg.match[0].match(/(kbox|kace|kase|support|help)/i)
+      msg.send Wikilists["kbox"]
+    else if msg.match[0].match(/(menu|breakfast menu|breakfast)/i)
+      msg.send Wikilists["menu"]
+    else if msg.match[0].match(/(ie)/i)
+      msg.send Wikilists["ie"]
+    else if msg.match[0].match(/(navinet|nn)/i)
+      msg.send Wikilists["navinet"]
+    else if msg.match[0].match(/(partners)/i)
+      msg.send Wikilists["partners"]
+    else if msg.match[0].match(/(api key|apikey|claims)/i)
+      msg.send Wikilists["claims"]
+    else if msg.match[0].match(/(sample claims|sample claim)/i)
+      msg.send Wikilists["sampleclaim"]
+    else if msg.match[0].match(/(epa|caremark)/i)
+      msg.send Wikilists["epa"]
+    else if msg.match[0].match(/(test users|users)/i)
+      msg.send Wikilists["testusers"]
+    else if msg.match[0].match(/(staging status|staging)/i)
+      msg.send Wikilists["stagingstatus"]
+    else if msg.match[0].match(/(git)/i)
+      msg.send Wikilists["gitcommands"]
     end
-    msg.send Wikilists[wikilist_type]
-
-
-
-  robot.respond /(get|wiki)( me)? (db|repl)/i, (msg) ->
-    wikilist_type = "db"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (harness|harnesses|nodes)/i, (msg) ->
-    wikilist_type = "nodes"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (fax|faxes)/i, (msg) ->
-    wikilist_type = "faxes"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (access records?|access)/i, (msg) ->
-    wikilist_type = "accessrecords"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(?:get|wiki)(?: me)? t(\d+)/i, (msg) ->
-    msg.send Wikilists["xanadustaging4_1"]
-    msg.send Wikilists["xanadustaging4_2"]
-
-  robot.respond /(get|wiki)( me)? (central)/i, (msg) ->
-    wikilist_type = "central"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (kbox|kace|kase|support|help)/i, (msg) ->
-    wikilist_type = "kbox"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (menu|breakfast menu)/i, (msg) ->
-    wikilist_type = "menu"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (ie)/i, (msg) ->
-    wikilist_type = "ie"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (navinet|nn)/i, (msg) ->
-    wikilist_type = "navinet"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (partners)/i, (msg) ->
-    wikilist_type = "partners"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (api key|apikey|claims)/i, (msg) ->
-    wikilist_type = "claims"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (sample claims|sample claim)/i, (msg) ->
-    wikilist_type = "sampleclaim"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (epa|caremark)/i, (msg) ->
-    wikilist_type = "epa"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (test users|users)/i, (msg) ->
-    wikilist_type = "testusers"
-    msg.send Wikilists[wikilist_type]
-
-  robot.respond /(get|wiki)( me)? (staging status|staging)/i, (msg) ->
-    wikilist_type = "stagingstatus"
-    msg.send Wikilists[wikilist_type]
 
   robot.respond /(how do i logout)/i, (msg) ->
     wikilist_type = "logout"
@@ -108,10 +65,6 @@ module.exports = (robot) ->
 
   robot.respond /(?:what if )?(something went wrong in testing)/i, (msg) ->
     msg.send "record it here: https://intranet.covermymeds.com/dev/_layouts/15/WopiFrame2.aspx?sourcedoc=%2Fdev%2FShared%20Documents%2FAJG%20Shared%20Docs%2FWhat%20Went%20Wrong%20in%20Testing%2Exlsx&action=edit"
-
-  robot.respond /(remind|get|wiki)( me)? (git)/i, (msg) ->
-    wikilist_type = "gitcommands"
-    msg.send Wikilists[wikilist_type]
 
 
 Wikilists =
@@ -224,8 +177,8 @@ Wikilists =
   claims:
    """
    api_key: a4b05a8151b4ddda2739e355aefab48a
-   
-   staging: 
+
+   staging:
    https://next.covermymeds.com
 
    production:
@@ -241,7 +194,6 @@ Wikilists =
 
    api_key: 
        a4b05a8151b4ddda2739e355aefab48a
-       
    """
   accessrecords:
    """
