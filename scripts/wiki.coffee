@@ -18,8 +18,10 @@ module.exports = (robot) ->
   robot.respond /(?:retrieve|tell)(?: me)? (.*)/i, (msg) ->
     if msg.match[0].match(/(db|repl)/i)
       wikilist_type = "db"
+      msg.send "DB"
     else if msg.match[0].match(/(harness|harnesses|nodes)/i)
       wikilist_type = "nodes"
+      msg.send "NODES"
     end
     msg.send Wikilists[wikilist_type]
 
