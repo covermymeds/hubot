@@ -15,16 +15,26 @@ module.exports = (robot) ->
     (name + "").trim()
 
 
+  robot.respond /(?:retrieve|tell)(?: me)? (.*)/i, (msg) ->
+    if msg.match[0].match(/(db|repl)/i)
+      wikilist_type = "db"
+    else if msg.match[0].match(/(harness|harnesses|nodes)/i)
+      wikilist_type = "nodes"
+    end
+    msg.send Wikilists[wikilist_type]
+
+
+
   robot.respond /(get|wiki)( me)? (db|repl)/i, (msg) ->
     wikilist_type = "db"
     msg.send Wikilists[wikilist_type]
 
-  robot.respond /(get|wiki)( me)? (fax|faxes)/i, (msg) ->
-    wikilist_type = "faxes"
-    msg.send Wikilists[wikilist_type]
-
   robot.respond /(get|wiki)( me)? (harness|harnesses|nodes)/i, (msg) ->
     wikilist_type = "nodes"
+    msg.send Wikilists[wikilist_type]
+
+  robot.respond /(get|wiki)( me)? (fax|faxes)/i, (msg) ->
+    wikilist_type = "faxes"
     msg.send Wikilists[wikilist_type]
 
   robot.respond /(get|wiki)( me)? (access records?|access)/i, (msg) ->
