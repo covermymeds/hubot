@@ -19,9 +19,14 @@ module.exports = (robot) ->
     if msg.match[0].match(/(db|repl)/i)
       wikilist_type = "db"
       msg.send "DB"
+      msg.send wikilist_type
+      msg.send Wikilists["db"]
     else if msg.match[0].match(/(harness|harnesses|nodes)/i)
       wikilist_type = "nodes"
       msg.send "NODES"
+      msg.send wikilist_type
+    else
+      msg.send "NOTHING"
     end
     msg.send Wikilists[wikilist_type]
 
