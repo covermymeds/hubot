@@ -52,6 +52,10 @@ module.exports = (robot) ->
     checklist_type = "deploy"
     msg.send Checklists[checklist_type]
 
+  robot.respond /(checklist)( me)? (db|database)/i, (msg) ->
+    checklist_type = "database"
+    msg.send Checklists[checklist_type]
+
   robot.respond /(checklist)( me)? (checklists?)/i, (msg) ->
     checklist_type = "checklists"
     msg.send Checklists[checklist_type]
@@ -77,9 +81,23 @@ Checklists =
 
       > next: regression
    """
+  database:
+    """
+      Before running full regression,
+      ensure that the DB is up-to-date:
+      [ ] go to https://git.innova-partners.com/cmm/database/pulls
+      [ ] start a new pull request
+      [ ] select your test env as the first dropdown
+          > it should say something like "testing_t1 ... master"
+      [ ] ping Bruce to merge the PR
+
+      > next: 'devmotron checklist me regression'
+    """
   regression:
     """
       Checklist for regression:
+      [ ] ensure that the DB is up-to-date
+          > 'devmotron checklist me DB '
       [ ] 'bundle exec rake spec'
           > runs specs
       [ ] 'bundle exec rake recordfails'
